@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
 class CompController extends Controller
@@ -88,7 +89,7 @@ class CompController extends Controller
                 'name'=>$request->name,
                 'price'=>$request->price,
             ]);
-            return redirect()->route('comp.index');
+            return Redirect()->route('comp.index');
         }
         else{
             $comps = Comp::findOrFail($id);
