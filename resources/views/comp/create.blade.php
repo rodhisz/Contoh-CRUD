@@ -16,7 +16,7 @@
 </div>
 
 
-<form class="container" action="{{route('comp.store')}}" method="POST" enctype="multipart/form-data">
+<form class="container" action="{{url('/create_comp')}}" method="POST" enctype="multipart/form-data">
     @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>

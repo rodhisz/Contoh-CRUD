@@ -47,7 +47,7 @@ class CompController extends Controller
             'price'=>$request->price,
             'image'=>$request->file('image')->store('comp-image')
         ]);
-        return redirect()->route('comp.index');
+        return redirect('/comp');
     }
 
     /**
@@ -111,9 +111,9 @@ class CompController extends Controller
      */
     public function destroy($id)
     {
-        $comps = Comp::findOrFail($id);
+        $comps = Comp::find($id);
         Storage::delete($comps->image);
         $comps -> delete();
-        return redirect()->route('comp.index');
+        return redirect('/comp');
     }
 }

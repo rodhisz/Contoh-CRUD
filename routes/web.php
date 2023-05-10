@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/comp', CompController::class);
+
+Route::post('/create_comp', [CompController::class, 'store']);
